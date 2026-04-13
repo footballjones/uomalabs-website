@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Axolittle</title>
+
+  <meta name="description" content="Privacy Policy for Axolittle, a virtual pet game by Uoma Labs LLC." />
+  <meta name="author" content="Uoma Labs LLC" />
+
+  <meta property="og:title" content="Privacy Policy — Axolittle" />
+  <meta property="og:description" content="Privacy Policy for Axolittle by Uoma Labs LLC." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.uomalabs.com/axolittle/policy" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1A365D;
+      --heading: #1A365D;
+      --muted: #5F6F85;
+      --line: #d9e5ec;
+      --panel: #f7fbfd;
+      --accent: #A3BFD9;
+      --accent-dark: #1A365D;
+      --accent-soft: #E7EFF7;
+      --max: 780px;
+      --radius: 20px;
+      --shadow-soft: 0 8px 24px rgba(13, 43, 70, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217,229,236,0.9);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      width: min(calc(100% - 2rem), 1120px);
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.1;
+      color: var(--heading);
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .brand-tagline {
+      margin: 0.24rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .policy-wrap {
+      padding: 4rem 0 6rem;
+    }
+
+    .policy-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-dark);
+      opacity: 1;
+    }
+
+    .breadcrumb-sep {
+      opacity: 0.45;
+    }
+
+    .policy-header h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--heading);
+    }
+
+    .policy-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .policy-body h2 {
+      margin: 2.25rem 0 0.65rem;
+      font-size: 1.22rem;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+    }
+
+    .policy-body h3 {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1rem;
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .policy-body p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .policy-body ul {
+      margin: 0 0 1rem;
+      padding-left: 1.4rem;
+      color: var(--muted);
+    }
+
+    .policy-body li {
+      margin-bottom: 0.35rem;
+    }
+
+    .policy-body hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 2.5rem 0;
+    }
+
+    .policy-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .policy-body th,
+    .policy-body td {
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .policy-body th {
+      background: var(--panel);
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 1.7rem 0 2.4rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+    }
+
+    .footer-row {
+      width: min(calc(100% - 2rem), 1120px);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        min-height: auto;
+        padding: 1rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Uoma Labs home">
+        <img class="brand-mark" src="/Uoma Labs Logo.svg" alt="Uoma Labs logo" />
+        <div class="brand-text">
+          <p class="brand-name">UOMA LABS LLC</p>
+          <p class="brand-tagline">asettua uomiinsa</p>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/products">Products</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy-wrap">
+    <div class="container">
+      <div class="policy-header">
+        <div class="breadcrumb">
+          <a href="/products">Products</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/axolittle">Axolittle</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Privacy Policy</span>
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="policy-meta"><strong>Effective Date:</strong> April 13, 2026 &nbsp;·&nbsp; <strong>App:</strong> Axolittle &nbsp;·&nbsp; <strong>Company:</strong> Uoma Labs LLC &nbsp;·&nbsp; <strong>Contact:</strong> <a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
+      </div>
+
+      <div class="policy-body">
+
+        <h2>1. Overview</h2>
+        <p>Uoma Labs LLC ("we," "our," or "us") built Axolittle as a virtual pet game for players of all ages. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+
+        <hr />
+
+        <h2>2. Information We Collect</h2>
+
+        <h3>a. Account Information (if you create an account)</h3>
+        <p>When you sign up, we collect:</p>
+        <ul>
+          <li>A username or display name you choose</li>
+          <li>Your email address (used for account recovery only)</li>
+          <li>An encrypted password (we never see or store your password in plain text)</li>
+        </ul>
+        <p>Guest play is available without creating an account. Guest data is stored only on your device.</p>
+
+        <h3>b. Game Data</h3>
+        <ul>
+          <li>Your axolotl's name, stats, level, and lineage</li>
+          <li>Mini-game scores and achievements</li>
+          <li>In-app currency balances (Coins and Opals)</li>
+          <li>App settings and preferences</li>
+        </ul>
+        <p>If you are signed in, this game data is <strong>synced to our cloud servers via Supabase</strong> so you can restore your progress if you reinstall the app or switch devices.</p>
+
+        <h3>c. Social Features</h3>
+        <ul>
+          <li>Your friend code (a randomly generated identifier — not your name or email)</li>
+          <li>Friends you add by friend code</li>
+          <li>Breeding requests sent to or received from friends</li>
+        </ul>
+
+        <h3>d. Technical Data</h3>
+        <ul>
+          <li>Device type and operating system version</li>
+          <li>App crash logs and error reports (used only for bug fixing)</li>
+        </ul>
+        <p>We do <strong>not</strong> collect your real name, physical address, phone number, or payment information.</p>
+
+        <hr />
+
+        <h2>3. How We Use Your Information</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Data Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Save and restore your game progress</td>
+              <td>Game data, account info</td>
+            </tr>
+            <tr>
+              <td>Enable cloud sync across devices</td>
+              <td>Game data (via Supabase)</td>
+            </tr>
+            <tr>
+              <td>Let you connect with friends</td>
+              <td>Friend code, social features</td>
+            </tr>
+            <tr>
+              <td>Fix bugs and improve the app</td>
+              <td>Crash logs, device info</td>
+            </tr>
+            <tr>
+              <td>Respond to support requests</td>
+              <td>Email address</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>We do not use your data for advertising or sell it to third parties.</p>
+
+        <hr />
+
+        <h2>4. Cloud Storage (Supabase)</h2>
+        <p>If you create an account, your game data is stored on servers provided by <strong>Supabase, Inc.</strong> (supabase.com), a cloud database and authentication service. Supabase stores data on infrastructure located in the United States.</p>
+        <p>Supabase's privacy policy is available at: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">https://supabase.com/privacy</a></p>
+        <p>Guest players' data stays on-device only and is never sent to our servers.</p>
+
+        <hr />
+
+        <h2>5. Children's Privacy (COPPA)</h2>
+        <p>Axolittle is suitable for players of all ages. We take children's privacy seriously.</p>
+        <p><strong>For users under 13:</strong></p>
+        <ul>
+          <li>We collect only what is necessary to run the game</li>
+          <li>We do not display behaviorally targeted advertising</li>
+          <li>We do not share children's data with third parties for marketing</li>
+          <li>Social features (friend codes, breeding) use randomly generated identifiers — never real names or contact information</li>
+          <li>Parents or guardians may contact us at <a href="mailto:support@uomalabs.com">support@uomalabs.com</a> to request deletion of their child's account and all associated data</li>
+        </ul>
+        <p>If we learn that we have inadvertently collected personal information from a child under 13 beyond what is described here, we will delete it promptly.</p>
+
+        <hr />
+
+        <h2>6. Data Sharing</h2>
+        <p>We do <strong>not sell</strong> your personal data.</p>
+        <p>We share data only with:</p>
+        <ul>
+          <li><strong>Supabase</strong> — cloud storage and authentication (see Section 4)</li>
+          <li><strong>Law enforcement</strong> — if required by a valid legal process</li>
+        </ul>
+        <p>No other third parties receive your data.</p>
+
+        <hr />
+
+        <h2>7. Data Retention</h2>
+        <p>We retain your data for as long as your account is active. If you delete your account, we delete your game data and account information within 30 days.</p>
+        <p>Game data stored on-device (for guest players) can be cleared at any time by uninstalling the app.</p>
+
+        <hr />
+
+        <h2>8. Data Security</h2>
+        <p>We protect your information through:</p>
+        <ul>
+          <li>Encrypted connections (HTTPS/TLS) for all data in transit</li>
+          <li>Supabase Row Level Security (RLS) so users can only access their own data</li>
+          <li>No storage of plain-text passwords</li>
+        </ul>
+        <p>No system is perfectly secure. If you believe your account has been compromised, contact us immediately.</p>
+
+        <hr />
+
+        <h2>9. Your Rights</h2>
+        <p><strong>All users may:</strong></p>
+        <ul>
+          <li>Request a copy of the data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your account and all associated data</li>
+        </ul>
+        <p><strong>California residents (CCPA)</strong> have additional rights including the right to know what personal information is collected and to opt out of sale (we do not sell data).</p>
+        <p><strong>EEA/UK residents (GDPR)</strong> may also restrict or object to processing, and have the right to data portability.</p>
+        <p>To exercise any of these rights, email us at <a href="mailto:support@uomalabs.com">support@uomalabs.com</a>. We will respond within 30 days.</p>
+
+        <hr />
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We will post any changes to this page and update the Effective Date at the top. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+        <hr />
+
+        <h2>11. Contact</h2>
+        <p>Uoma Labs LLC<br /><a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div>© 2026 Uoma Labs LLC. All rights reserved.</div>
+      <div>Software, apps, AI, and SaaS products.</div>
+    </div>
+  </footer>
+</body>
+</html>
