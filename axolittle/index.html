@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axolittle — Uoma Labs</title>
+
+  <meta name="description" content="Axolittle is a mobile game where you adopt, raise, and care for your own axolotl. Collect rare variations, grow your bond, and build your collection." />
+  <meta name="author" content="Uoma Labs LLC" />
+
+  <meta property="og:title" content="Axolittle — Uoma Labs" />
+  <meta property="og:description" content="A mobile game where you raise and care for your own axolotl and collect different variations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.uomalabs.com/axolittle" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f8fcfe;
+      --text: #1A365D;
+      --heading: #1A365D;
+      --muted: #5F6F85;
+      --line: #d9e5ec;
+      --panel: #f7fbfd;
+      --accent: #A3BFD9;
+      --accent-dark: #1A365D;
+      --accent-soft: #E7EFF7;
+      --green-soft: #8DA399;
+      --max: 1120px;
+      --radius: 20px;
+      --radius-lg: 30px;
+      --shadow: 0 14px 40px rgba(13, 43, 70, 0.08);
+      --shadow-soft: 0 8px 24px rgba(13, 43, 70, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217,229,236,0.9);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.1;
+      color: var(--heading);
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .brand-tagline {
+      margin: 0.24rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 5.5rem 0 4rem;
+      background: radial-gradient(circle at 80% 15%, rgba(163,191,217,0.22), transparent 40%),
+                  radial-gradient(circle at 15% 80%, rgba(141,163,153,0.18), transparent 40%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.15rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 1px solid rgba(47, 143, 181, 0.12);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+      color: var(--heading);
+    }
+
+    .hero-desc {
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 54ch;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(47, 143, 181, 0.22);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(47, 143, 181, 0.28);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      color: var(--heading);
+      background: rgba(255,255,255,0.9);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-badge {
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #ffffff, #f0f7fc);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .hero-badge-icon {
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badge h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.5rem;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-badge p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ── Feature strip ── */
+    .features {
+      padding: 4rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .feature-card {
+      padding: 1.6rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature-card:nth-child(2) {
+      background: linear-gradient(160deg, #ffffff, #f0f7f4);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+      color: var(--heading);
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* ── Info rows ── */
+    .info-section {
+      padding: 1rem 0 4rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: stretch;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .info-card {
+      flex: 1;
+      padding: 1.8rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, var(--panel) 100%);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .info-card.clickable {
+      cursor: pointer;
+      display: block;
+    }
+
+    .info-card.clickable:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: rgba(47, 143, 181, 0.28);
+    }
+
+    .info-card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .info-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.18rem;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .info-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1.2rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .info-card-cta svg {
+      transition: transform 0.18s ease;
+    }
+
+    .info-card.clickable:hover .info-card-cta svg {
+      transform: translateX(3px);
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      padding: 1.7rem 0 2.4rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-badge {
+        max-width: 100%;
+        padding: 1.75rem 1.5rem;
+      }
+
+      .hero-badge-icon {
+        font-size: 3.5rem;
+      }
+
+      .info-row {
+        flex-direction: column;
+      }
+
+      .nav {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Uoma Labs home">
+        <img class="brand-mark" src="/Uoma Labs Logo.svg" alt="Uoma Labs logo" />
+        <div class="brand-text">
+          <p class="brand-name">UOMA LABS LLC</p>
+          <p class="brand-tagline">asettua uomiinsa</p>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/products">Products</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">Mobile game &middot; iOS &amp; Android</div>
+          <h1>Raise your own axolotl.</h1>
+          <p class="hero-desc">
+            Axolittle is a mobile virtual pet game where you adopt and care for your very own axolotl. Feed it, play with it, and watch it grow. Discover and collect dozens of rare color variations — each axolotl is unique.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="mailto:support@uomalabs.com">Contact support</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-badge">
+            <div class="hero-badge-icon">🦎</div>
+            <h2>Axolittle</h2>
+            <p>Your axolotl companion awaits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🐾</div>
+            <h3>Raise &amp; care</h3>
+            <p>Feed, play, and tend to your axolotl every day. Build a bond as your pet grows and evolves over time.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Collect variations</h3>
+            <p>Discover dozens of rare color morphs and unique axolotl variations. Some are common, others are nearly impossible to find.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">👾</div>
+            <h3>Mini-games &amp; rewards</h3>
+            <p>Play mini-games to earn Coins and Opals. Use your currency to unlock new items, habitats, and surprises.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info cards: Privacy Policy + Support -->
+    <section class="info-section">
+      <div class="container">
+        <div class="info-row">
+
+          <a class="info-card clickable" href="/axolittle/privacy">
+            <div class="info-card-label">Legal</div>
+            <h3>Privacy Policy</h3>
+            <p>Learn what data Axolittle collects, how it's used, and how we protect your information — including full COPPA and GDPR details.</p>
+            <span class="info-card-cta">
+              Read privacy policy
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="info-card clickable" href="mailto:support@uomalabs.com">
+            <div class="info-card-label">Support</div>
+            <h3>Need help?</h3>
+            <p>Having trouble with the game, your account, or a purchase? Our support team is here. Reach out and we'll get back to you.</p>
+            <span class="info-card-cta">
+              Email support@uomalabs.com
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2026 Uoma Labs LLC. All rights reserved.</div>
+      <div>Software, apps, AI, and SaaS products.</div>
+    </div>
+  </footer>
+</body>
+</html>
