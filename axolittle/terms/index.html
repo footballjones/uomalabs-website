@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Axolittle</title>
+
+  <meta name="description" content="Terms of Service for Axolittle, a virtual pet game by Uoma Labs." />
+  <meta name="author" content="Uoma Labs" />
+
+  <meta property="og:title" content="Terms of Service — Axolittle" />
+  <meta property="og:description" content="Terms of Service for Axolittle by Uoma Labs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.uomalabs.com/axolittle/terms" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1A365D;
+      --heading: #1A365D;
+      --muted: #5F6F85;
+      --line: #d9e5ec;
+      --panel: #f7fbfd;
+      --accent: #A3BFD9;
+      --accent-dark: #1A365D;
+      --accent-soft: #E7EFF7;
+      --max: 780px;
+      --radius: 20px;
+      --shadow-soft: 0 8px 24px rgba(13, 43, 70, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217,229,236,0.9);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      width: min(calc(100% - 2rem), 1120px);
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.1;
+      color: var(--heading);
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .brand-tagline {
+      margin: 0.24rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .policy-wrap {
+      padding: 4rem 0 6rem;
+    }
+
+    .policy-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-dark);
+      opacity: 1;
+    }
+
+    .breadcrumb-sep {
+      opacity: 0.45;
+    }
+
+    .policy-header h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--heading);
+    }
+
+    .policy-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .policy-body h2 {
+      margin: 2.25rem 0 0.65rem;
+      font-size: 1.22rem;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+    }
+
+    .policy-body p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .policy-body ul {
+      margin: 0 0 1rem;
+      padding-left: 1.4rem;
+      color: var(--muted);
+    }
+
+    .policy-body li {
+      margin-bottom: 0.35rem;
+    }
+
+    .policy-body hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 2.5rem 0;
+    }
+
+    .site-footer {
+      padding: 1.7rem 0 2.4rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+    }
+
+    .footer-row {
+      width: min(calc(100% - 2rem), 1120px);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        min-height: auto;
+        padding: 1rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Uoma Labs home">
+        <img class="brand-mark" src="/Uoma Labs Logo.svg" alt="Uoma Labs logo" />
+        <div class="brand-text">
+          <p class="brand-name">UOMA LABS LLC</p>
+          <p class="brand-tagline">asettua uomiinsa</p>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/products">Products</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy-wrap">
+    <div class="container">
+      <div class="policy-header">
+        <div class="breadcrumb">
+          <a href="/products">Products</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/axolittle">Axolittle</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Terms of Service</span>
+        </div>
+        <h1>Terms of Service</h1>
+        <p class="policy-meta"><strong>Effective Date:</strong> April 24, 2026 &nbsp;·&nbsp; <strong>App:</strong> Axolittle &nbsp;·&nbsp; <strong>Published by:</strong> Uoma Labs &nbsp;·&nbsp; <strong>Contact:</strong> <a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
+      </div>
+
+      <div class="policy-body">
+        <hr />
+
+        <h2>1. Acceptance</h2>
+        <p>By downloading, installing, or playing Axolittle ("the App"), you agree to these Terms of Service ("Terms"). If you do not agree, do not use the App. If you are under 13, a parent or guardian must accept these Terms on your behalf.</p>
+
+        <hr />
+
+        <h2>2. Who Can Use the App</h2>
+        <ul>
+          <li>You must be at least 13 years old to create an account.</li>
+          <li>Players under 13 may use the App in guest mode only. A parent or guardian may create an account to unlock social features on a child's behalf.</li>
+          <li>By creating an account, you confirm you are 13 or older, or that you are a parent/guardian acting on behalf of a child under 13.</li>
+        </ul>
+
+        <hr />
+
+        <h2>3. Accounts</h2>
+        <ul>
+          <li>Accounts are identified by a username and password. Keep your credentials secure — you are responsible for all activity under your account.</li>
+          <li>Usernames must be 3–20 characters, alphanumeric and underscores only. Do not use names that are offensive, impersonating, or deceptive.</li>
+          <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
+        </ul>
+
+        <hr />
+
+        <h2>4. Virtual Currency and Items</h2>
+        <ul>
+          <li>The App includes virtual currencies (Coins and Opals) and in-game items. These have no real-world monetary value and cannot be exchanged for cash.</li>
+          <li>Virtual currency and items are licensed to you, not sold. We may modify, remove, or reset virtual items at any time.</li>
+          <li>Any purchases made through the App are processed by Apple's App Store. All sales are final unless required otherwise by applicable law or Apple's policies.</li>
+        </ul>
+
+        <hr />
+
+        <h2>5. User Conduct</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Cheat, exploit bugs, or use unauthorized third-party tools to modify game data.</li>
+          <li>Harass, threaten, or send inappropriate content to other players.</li>
+          <li>Attempt to access other users' accounts or game data.</li>
+          <li>Reverse-engineer, decompile, or modify any part of the App.</li>
+          <li>Use the App for any commercial purpose without our written consent.</li>
+        </ul>
+
+        <hr />
+
+        <h2>6. Social Features</h2>
+        <p>The App includes social features such as friend codes, egg gifting, and visiting other players' tanks. By using these features you agree to interact respectfully. We may restrict or remove social features for accounts that misuse them.</p>
+
+        <hr />
+
+        <h2>7. Cloud Save</h2>
+        <p>Your game progress may be synced to our servers (Supabase) when you have an account. We make reasonable efforts to preserve your data but do not guarantee against data loss. Guest mode progress is stored locally on your device only — we are not responsible for local data loss.</p>
+
+        <hr />
+
+        <h2>8. Intellectual Property</h2>
+        <p>All content in the App — including artwork, music, characters, game mechanics, and the Axolittle name — is owned by Uoma Labs or licensed to us. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+
+        <hr />
+
+        <h2>9. Privacy</h2>
+        <p>Your use of the App is also governed by our <a href="https://www.uomalabs.com/axolittle/privacy">Privacy Policy</a>. We comply with COPPA. We do not knowingly collect personal information from children under 13 without verifiable parental consent.</p>
+
+        <hr />
+
+        <h2>10. Disclaimers</h2>
+        <p>The App is provided "as is" without warranties of any kind. We do not guarantee the App will be error-free, uninterrupted, or available at all times. We are not liable for any loss of game progress, virtual items, or data.</p>
+
+        <hr />
+
+        <h2>11. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Uoma Labs shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App, even if we have been advised of the possibility of such damages. Our total liability to you shall not exceed the amount you paid us in the 12 months prior to the claim.</p>
+
+        <hr />
+
+        <h2>12. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. Continued use of the App after changes are posted constitutes acceptance of the updated Terms. We will note the effective date at the top of this page.</p>
+
+        <hr />
+
+        <h2>13. Termination</h2>
+        <p>We may suspend or terminate your access to the App at any time, for any reason, with or without notice. You may stop using the App at any time.</p>
+
+        <hr />
+
+        <h2>14. Governing Law</h2>
+        <p>These Terms are governed by the laws of The United States of America, without regard to conflict of law principles.</p>
+
+        <hr />
+
+        <h2>15. Contact</h2>
+        <p>Questions about these Terms? Reach us at:<br /><strong><a href="mailto:support@uomalabs.com">support@uomalabs.com</a></strong></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div>© 2026 Uoma Labs LLC. All rights reserved.</div>
+      <div>Software, apps, AI, and SaaS products.</div>
+    </div>
+  </footer>
+</body>
+</html>
