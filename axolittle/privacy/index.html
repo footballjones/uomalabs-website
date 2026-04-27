@@ -328,53 +328,66 @@
           <span>Privacy Policy</span>
         </div>
         <h1>Privacy Policy</h1>
-        <p class="policy-meta"><strong>Effective Date:</strong> April 13, 2026 &nbsp;·&nbsp; <strong>App:</strong> Axolittle &nbsp;·&nbsp; <strong>Company:</strong> Uoma Labs LLC &nbsp;·&nbsp; <strong>Contact:</strong> <a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
+        <p class="policy-meta"><strong>Effective Date:</strong> April 27, 2026 &nbsp;·&nbsp; <strong>App:</strong> Axolittle &nbsp;·&nbsp; <strong>Company:</strong> Uoma Labs LLC &nbsp;·&nbsp; <strong>Contact:</strong> <a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
       </div>
 
       <div class="policy-body">
 
         <h2>1. Overview</h2>
-        <p>Uoma Labs LLC ("we," "our," or "us") built Axolittle as a virtual pet game for players of all ages. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+        <p>Uoma Labs LLC ("we," "our," or "us") built Axolittle as a virtual pet game for players of all ages. This Privacy Policy explains what we collect, why we collect it, and how we protect it. We collect as little as possible — especially from younger players.</p>
 
         <hr />
 
-        <h2>2. Information We Collect</h2>
+        <h2>2. Age Gate</h2>
+        <p>When you first open Axolittle, we ask the year you were born. This answer is stored <strong>only on your device</strong> and is never sent to our servers. We use it to:</p>
+        <ul>
+          <li>Route players under 13 into a fully on-device, guest-only experience (see Section 6)</li>
+          <li>Show a one-time math challenge before any account-creation path opens, so children can't sign up on their own</li>
+        </ul>
+        <p>A parent or guardian who is setting up the app can pass the math challenge and create their own adult account.</p>
 
-        <h3>a. Account Information (if you create an account)</h3>
-        <p>When you sign up, we collect:</p>
+        <hr />
+
+        <h2>3. Information We Collect</h2>
+        <p>We collect only what's necessary to run the game, and only from players age 13 and older.</p>
+
+        <h3>a. Account information (if you create an account)</h3>
         <ul>
           <li>A username or display name you choose</li>
-          <li>Your email address (used for account recovery only)</li>
-          <li>An encrypted password (we never see or store your password in plain text)</li>
+          <li>A password — we never see or store the plaintext (Supabase hashes it)</li>
+          <li>A recovery email — <em>optional</em>, used only to send you a password-reset link if you forget your password</li>
         </ul>
-        <p>Guest play is available without creating an account. Guest data is stored only on your device.</p>
 
-        <h3>b. Game Data</h3>
+        <h3>b. OAuth sign-in (if you use "Sign in with Apple" or "Sign in with Google")</h3>
         <ul>
-          <li>Your axolotl's name, stats, level, and lineage</li>
+          <li>The identity returned by the provider: an opaque user ID, the email address Apple or Google releases to us (Apple may relay a private alias), and the display name configured with that provider. We do not request any other information from these providers.</li>
+        </ul>
+
+        <h3>c. Game data (signed-in users on devices age-gated as 13+ only)</h3>
+        <ul>
+          <li>Your axolotl's name, stage, lineage, color/pattern, and decorations</li>
           <li>Mini-game scores and achievements</li>
           <li>In-app currency balances (Coins and Opals)</li>
           <li>App settings and preferences</li>
-        </ul>
-        <p>If you are signed in, this game data is <strong>synced to our cloud servers via Supabase</strong> so you can restore your progress if you reinstall the app or switch devices.</p>
-
-        <h3>c. Social Features</h3>
-        <ul>
-          <li>Your friend code (a randomly generated identifier — not your name or email)</li>
-          <li>Friends you add by friend code</li>
-          <li>Breeding requests sent to or received from friends</li>
+          <li>Your friend list (identified by friend codes — random 8-character identifiers, never real names)</li>
+          <li>Friend notifications you send or receive (gifts, pokes)</li>
         </ul>
 
-        <h3>d. Technical Data</h3>
+        <h3>d. Guest data and under-13 data</h3>
         <ul>
-          <li>Device type and operating system version</li>
-          <li>App crash logs and error reports (used only for bug fixing)</li>
+          <li>All game data for guest players, and <em>all</em> game data for players under 13, stays on your device in your browser/app's local storage. None of it is transmitted to our servers — even if a parent signs in their own account on that device.</li>
         </ul>
-        <p>We do <strong>not</strong> collect your real name, physical address, phone number, or payment information.</p>
+
+        <h3>e. Infrastructure data</h3>
+        <ul>
+          <li>Our backend provider (Supabase) logs the IP address and User-Agent of HTTPS requests as standard server-infrastructure operations. We don't combine this with other data, and we don't use it for tracking, profiling, or advertising.</li>
+        </ul>
+
+        <p>We do <strong>not</strong> collect your real name, physical address, phone number, geolocation, contacts, photos, microphone, camera, or payment information. The app does <strong>not</strong> include any third-party analytics, behavioral tracking, advertising, or marketing-attribution SDKs.</p>
 
         <hr />
 
-        <h2>3. How We Use Your Information</h2>
+        <h2>4. How We Use Your Information</h2>
         <table>
           <thead>
             <tr>
@@ -384,90 +397,120 @@
           </thead>
           <tbody>
             <tr>
-              <td>Save and restore your game progress</td>
+              <td>Save and restore your game progress (signed-in 13+ users)</td>
               <td>Game data, account info</td>
             </tr>
             <tr>
-              <td>Enable cloud sync across devices</td>
+              <td>Cloud-sync your axolotl across devices</td>
               <td>Game data (via Supabase)</td>
             </tr>
             <tr>
               <td>Let you connect with friends</td>
-              <td>Friend code, social features</td>
+              <td>Friend codes, friend notifications</td>
             </tr>
             <tr>
-              <td>Fix bugs and improve the app</td>
-              <td>Crash logs, device info</td>
+              <td>Send you a password-reset link if you forget your password</td>
+              <td>Recovery email (via Resend)</td>
+            </tr>
+            <tr>
+              <td>Authenticate "Sign in with Apple" or "Sign in with Google"</td>
+              <td>OAuth identity from the provider</td>
             </tr>
             <tr>
               <td>Respond to support requests</td>
-              <td>Email address</td>
+              <td>The email you contact us from</td>
             </tr>
           </tbody>
         </table>
-        <p>We do not use your data for advertising or sell it to third parties.</p>
+        <p>We do <strong>not</strong> use your data for advertising, retargeting, behavioral profiling, or any kind of sale or sharing for marketing.</p>
 
         <hr />
 
-        <h2>4. Cloud Storage (Supabase)</h2>
-        <p>If you create an account, your game data is stored on servers provided by <strong>Supabase, Inc.</strong> (supabase.com), a cloud database and authentication service. Supabase stores data on infrastructure located in the United States.</p>
-        <p>Supabase's privacy policy is available at: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">https://supabase.com/privacy</a></p>
-        <p>Guest players' data stays on-device only and is never sent to our servers.</p>
+        <h2>5. Third-Party Services (Sub-Processors)</h2>
+        <p>We use a small number of trusted services to run Axolittle:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>What they receive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Supabase, Inc.</strong> — <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></td>
+              <td>Database, authentication, file storage</td>
+              <td>Your account info and game data (signed-in 13+ users only); request IP and User-Agent for users who reach the API</td>
+            </tr>
+            <tr>
+              <td><strong>Resend</strong> — <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a></td>
+              <td>Sends transactional password-recovery emails</td>
+              <td>Your recovery email address and the email body, only when you request a password reset</td>
+            </tr>
+            <tr>
+              <td><strong>Apple, Inc.</strong></td>
+              <td>"Sign in with Apple" identity provider</td>
+              <td>What Apple itself sees during the sign-in flow</td>
+            </tr>
+            <tr>
+              <td><strong>Google LLC</strong></td>
+              <td>"Sign in with Google" identity provider</td>
+              <td>What Google itself sees during the sign-in flow</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Supabase and Resend store data on infrastructure located in the United States.</p>
 
         <hr />
 
-        <h2>5. Children's Privacy (COPPA)</h2>
-        <p>Axolittle is suitable for players of all ages. We take children's privacy seriously.</p>
-        <p><strong>For users under 13:</strong></p>
+        <h2>6. Children's Privacy (COPPA)</h2>
+        <p>Axolittle is rated for all ages. We take children's privacy seriously.</p>
+        <p><strong>For players whose age gate identifies them as under 13:</strong></p>
         <ul>
-          <li>We collect only what is necessary to run the game</li>
-          <li>We do not display behaviorally targeted advertising</li>
-          <li>We do not share children's data with third parties for marketing</li>
-          <li>Social features (friend codes, breeding) use randomly generated identifiers — never real names or contact information</li>
-          <li>Parents or guardians may contact us at <a href="mailto:support@uomalabs.com">support@uomalabs.com</a> to request deletion of their child's account and all associated data</li>
+          <li><strong>No account creation.</strong> They play in guest mode only.</li>
+          <li><strong>No data leaves the device.</strong> Cloud sync, achievement sync, and profile publishing are all hard-disabled in the app code. Even if a parent later signs in their own account on the same device, the under-13 lock stays in place — gameplay on that device never syncs.</li>
+          <li><strong>No social features.</strong> Friend graph, breeding, and gifting are disabled in the user interface.</li>
+          <li><strong>No ads.</strong> We do not display ads of any kind. If we ever introduce ads in the future, they will be non-personalized for under-13 users (no behavioral targeting, no persistent identifiers).</li>
+          <li><strong>No third-party tracking, analytics, or marketing data sharing.</strong></li>
         </ul>
-        <p>If we learn that we have inadvertently collected personal information from a child under 13 beyond what is described here, we will delete it promptly.</p>
-
-        <hr />
-
-        <h2>6. Data Sharing</h2>
-        <p>We do <strong>not sell</strong> your personal data.</p>
-        <p>We share data only with:</p>
+        <p><strong>Parental controls.</strong> A parent or guardian may at any time:</p>
         <ul>
-          <li><strong>Supabase</strong> — cloud storage and authentication (see Section 4)</li>
-          <li><strong>Law enforcement</strong> — if required by a valid legal process</li>
+          <li>Email <a href="mailto:support@uomalabs.com">support@uomalabs.com</a> to request deletion of any account or data we hold for their child</li>
+          <li>Clear all on-device game data by uninstalling the app</li>
         </ul>
-        <p>No other third parties receive your data.</p>
+        <p>If we ever learn that we've inadvertently collected personal information from a child under 13 beyond what's described here, we will delete it promptly.</p>
 
         <hr />
 
-        <h2>7. Data Retention</h2>
-        <p>We retain your data for as long as your account is active. If you delete your account, we delete your game data and account information within 30 days.</p>
-        <p>Game data stored on-device (for guest players) can be cleared at any time by uninstalling the app.</p>
+        <h2>7. Data Retention and Deletion</h2>
+        <p>We retain your account data for as long as your account is active. You can delete your account and all associated cloud data at any time directly in the app: <strong>Settings → Data → Delete Account</strong>. Deletion is immediate and permanent on our cloud servers, and clears your on-device save.</p>
+        <p>You can also email <a href="mailto:support@uomalabs.com">support@uomalabs.com</a> to request deletion. We respond within 30 days.</p>
+        <p>Guest data — and all under-13 data — lives only on your device. Uninstalling the app or clearing your browser's site data removes it.</p>
 
         <hr />
 
         <h2>8. Data Security</h2>
-        <p>We protect your information through:</p>
+        <p>We protect your information with:</p>
         <ul>
-          <li>Encrypted connections (HTTPS/TLS) for all data in transit</li>
-          <li>Supabase Row Level Security (RLS) so users can only access their own data</li>
-          <li>No storage of plain-text passwords</li>
+          <li>HTTPS/TLS encryption for all data in transit</li>
+          <li>Supabase Row-Level Security (RLS) so users can only access their own data</li>
+          <li>Hashed passwords — never stored in plaintext</li>
+          <li>A math challenge before any account-creation path opens on devices age-gated as under 13</li>
         </ul>
         <p>No system is perfectly secure. If you believe your account has been compromised, contact us immediately.</p>
 
         <hr />
 
         <h2>9. Your Rights</h2>
-        <p><strong>All users may:</strong></p>
+        <p>All users may:</p>
         <ul>
-          <li>Request a copy of the data we hold about you</li>
+          <li>Request a copy of the data we hold about them</li>
           <li>Request correction of inaccurate data</li>
-          <li>Request deletion of your account and all associated data</li>
+          <li>Delete their account and all associated cloud data — directly in the app under <strong>Settings → Data → Delete Account</strong>, or by emailing us</li>
         </ul>
-        <p><strong>California residents (CCPA)</strong> have additional rights including the right to know what personal information is collected and to opt out of sale (we do not sell data).</p>
-        <p><strong>EEA/UK residents (GDPR)</strong> may also restrict or object to processing, and have the right to data portability.</p>
-        <p>To exercise any of these rights, email us at <a href="mailto:support@uomalabs.com">support@uomalabs.com</a>. We will respond within 30 days.</p>
+        <p><strong>California (CCPA/CPRA):</strong> You have the right to know what personal information is collected, to request deletion, and to opt out of sale or sharing. <strong>We do not sell or share personal information.</strong></p>
+        <p><strong>EEA / UK (GDPR):</strong> You may additionally restrict or object to processing, and have the right to data portability.</p>
+        <p>To exercise any of these rights, email <a href="mailto:support@uomalabs.com">support@uomalabs.com</a>. We respond within 30 days.</p>
 
         <hr />
 
@@ -477,7 +520,7 @@
         <hr />
 
         <h2>11. Contact</h2>
-        <p>Uoma Labs LLC<br /><a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
+        <p><strong>Uoma Labs LLC</strong><br /><a href="mailto:support@uomalabs.com">support@uomalabs.com</a></p>
 
       </div>
     </div>
