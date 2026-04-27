@@ -364,14 +364,22 @@
         </ul>
 
         <h3>c. Game data (signed-in users on devices age-gated as 13+ only)</h3>
+        <p>This data is synced to our cloud servers via Supabase so you can restore your progress on a new device:</p>
         <ul>
           <li>Your axolotl's name, stage, lineage, color/pattern, and decorations</li>
           <li>Mini-game scores and achievements</li>
           <li>In-app currency balances (Coins and Opals)</li>
           <li>App settings and preferences</li>
           <li>Your friend list (identified by friend codes — random 8-character identifiers, never real names)</li>
-          <li>Friend notifications you send or receive (gifts, pokes)</li>
+          <li>Friend notifications you send or receive (gifts, pokes), labeled with your axolotl's name</li>
         </ul>
+        <p><strong>What other signed-in players can see about you.</strong> To make social features work, certain fields are readable by any other signed-in player who knows your friend code:</p>
+        <ul>
+          <li>Your axolotl's name, appearance (color, pattern, rarity), and current stage</li>
+          <li>Decorations and background you've equipped</li>
+          <li>Achievements you've unlocked</li>
+        </ul>
+        <p>Your username, recovery email, password, currency balances, mini-game scores, and friend list are <strong>not</strong> visible to other players. Only the friend you're directly interacting with sees your axolotl's name on a gift or poke notification — your username never appears in the social graph.</p>
 
         <h3>d. Guest data and under-13 data</h3>
         <ul>
@@ -493,7 +501,7 @@
         <p>We protect your information with:</p>
         <ul>
           <li>HTTPS/TLS encryption for all data in transit</li>
-          <li>Supabase Row-Level Security (RLS) so users can only access their own data</li>
+          <li>Supabase Row-Level Security policies that prevent any user from modifying another user's data. (For the social-feature fields disclosed in Section 3c — axolotl appearance, achievements, friend code — read access is intentionally permitted to other signed-in players.)</li>
           <li>Hashed passwords — never stored in plaintext</li>
           <li>A math challenge before any account-creation path opens on devices age-gated as under 13</li>
         </ul>
